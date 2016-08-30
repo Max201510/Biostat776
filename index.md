@@ -57,7 +57,7 @@ The homework assignments will be due on
 * Homework 2: October 7, 11:59pm
 * Homework 3: October 26, 11:59pm
 
-### Collaboration
+### Homework collaboration
 
 Please feel free to study together and talk to one another about
 homework assignments. The mutual instruction that students give each
@@ -67,3 +67,15 @@ independently unless otherwise specified. Specifically, please do not
 share analytic code or output. Please do not collaborate on write-up
 and interpretation. Please do not access or use solutions from any
 source before your homework assignment is submitted for grading.
+
+## Academic Ethics and Student Conduct Code
+
+Students enrolled in the Bloomberg School of Public Health of The Johns Hopkins University assume an obligation to conduct themselves in a manner appropriate to the University's mission as an institution of higher education. A student is obligated to refrain from acts which he or she knows, or under the circumstances has reason to know, impair the academic integrity of the University. Violations of academic integrity include, but are not limited to: cheating; plagiarism; knowingly furnishing false information to any agent of the University for inclusion in the academic record; violation of the rights and welfare of animal or human subjects in research; and misconduct as a member of either School or University committees or recognized groups or organizations.
+
+Students should be familiar with the policies and procedures specified under Policy and Procedure Manual Student-01 (Academic Ethics), available on the school’s [portal](http://my.jhsph.edu).
+
+The faculty, staff and students of the Bloomberg School of Public Health and the Johns Hopkins University have the shared responsibility to conduct themselves in a manner that upholds the law and respects the rights of others. Students enrolled in the School are subject to the Student Conduct Code (detailed in Policy and Procedure Manual Student-06) and assume an obligation to conduct themselves in a manner which upholds the law and respects the rights of others. They are responsible for maintaining the academic integrity of the institution and for preserving an environment conducive to the safe pursuit of the School's educational, research, and professional practice missions.
+
+## Disability Support Services
+
+If you are a student with a documented disability who requires an academic accommodation, please contact the Office of Disability Support Services at 410-502-6602 or via email at `JHSPH.dss@jhu.edu`. Accommodations take effect upon approval and apply to the remainder of the time for which a student is registered and enrolled at the Bloomberg School of Public Health.
