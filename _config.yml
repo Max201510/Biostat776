@@ -16,3 +16,4 @@ github_username:  rdpeng
 
 # Build settings
 markdown: kramdown
+theme: minima
