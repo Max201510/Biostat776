@@ -4,24 +4,26 @@ title: Schedule
 permalink: /schedule/
 ---
 
+Note: All lecture slides are provided in PDF format.
+
 | Date | Topic | Other Resources & Notes |
-|:--- |:--- |:--- |
-9/1 | Overview and Major Themes | |
-9/6 | | |
-9/8 | | |
-9/13 | | |
-9/15 | | |
-9/16 | **Homework 1 due** | *Please submit your homework throught the Courseplus dropbox* |
-9/20 | | |
-9/22 | | |
-9/27 | | |
-9/29 | | |
-10/4 | | |
-10/6 | | |
-10/7 | **Homework 2 due** | *Please submit your homework throught the Courseplus dropbox* |
-10/11 | | |
-10/13 | | |
-10/18 | | |
-10/20 | | |
-10/25 | | |
-10/26 | **Homework 3 due** | *Please submit your homework throught the Courseplus dropbox* |
+|:---- |:----- |:------------------------|
+9/1 | Introduction and Logistics; Overview of Course, Major Themes | |
+9/6 | Reproducible research in RStudio| |
+9/8 | Getting and cleaning data| How to get help from others |
+9/13 | Working with dates and times; Memory usage| |
+9/15 | **LECTURE CANCELLED** | [R language nitty gritty](../notes/pdf/r-nuts-bolts.pdf)  
+9/16 | **Homework 1 due** | *Please submit your homework through the Courseplus dropbox* |
+9/20 | The ggplot2 system for visualizing data| |
+9/22 | Plotting data with ggplot2 (part 2)| |
+9/27 | Mapping; Color | |
+9/29 | Control structures and functions| |
+10/4 | Writing functions; Error handling| |
+10/6 | Loop functions| |
+10/7 | **Homework 2 due** | *Please submit your homework through the Courseplus dropbox* |
+10/11 | R packages | |
+10/13 | Building R packages | |
+10/18 | Debugging; Profiling | |
+10/20 | Object-oriented programming| |
+10/25| Working with larger datasets |  |
+10/26 | **Homework 3 due** | *Please submit your homework through the Courseplus dropbox* |
