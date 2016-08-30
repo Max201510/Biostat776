@@ -9,7 +9,7 @@
 title: Biostatistics 776 - Statistical Computing
 email: rdpeng@jhu.edu
 description: This the web site for Biostatistics 776 - Statistical Computing at the Johns Hopkins Bloomberg School of Public Health
-baseurl: "Biostat776" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://rdpeng.github.io/Biostat776" # the base hostname & protocol for your site
 twitter_username: rdpeng
 github_username:  rdpeng
