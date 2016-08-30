@@ -4,7 +4,9 @@ title: Schedule
 permalink: /schedule/
 ---
 
-Note: All lecture slides are provided in PDF format.
+All lecture slides are provided in PDF format.
+
+All lectures take place 1:30-2:50pm in W2008.
 
 | Date | Topic | Other Resources & Notes |
 |:---- |:----- |:------------------------|
