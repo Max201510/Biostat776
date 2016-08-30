@@ -9,14 +9,14 @@ This course covers programming and other computer skills required
   will be on programming in the R language; we will cover the basic
   language elements and methods for software development in R. We will
   also cover computing topics such as coding best practices, version
-  control, copyright law, and graphics.</p>
+  control, copyright law, and graphics.
 
 ## Course Details
 
 Instructor
 
 * Roger D. Peng
-* Office: E3535 (Bloomberg School) 
+* Office: E3535 (Bloomberg School of Public Health) 
 * Email: rdpeng@jhu.edu
 * Phone: 5-2468
 
