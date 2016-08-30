@@ -13,6 +13,11 @@ This course covers programming and other computer skills required
 
 ## Course Details
 
+Schedule
+
+* Lecture: T/Th 1:30—2:50am W2008 
+* Instructor Office Hour: W 12-1pm in E3535
+
 Instructor
 
 * Roger D. Peng
@@ -20,18 +25,13 @@ Instructor
 * Email: rdpeng@jhu.edu
 * Phone: 5-2468
 
-Schedule
-
-* Lecture: T/Th 1:30—2:50am W2008 
-* Instructor Office Hour: W 12-1pm in E3535
-
 ## Textbooks
 
 The following books will be used in the course and are available free
 from Leanpub.com:
 
 * [R Programming for Data Science](https://leanpub.com/rprogramming),
-  by Roger D. Peng
+  by Roger D. Peng (you can also read this book [on the web](https://bookdown.org/rdpeng/rprogdatascience/))
 
 * [Exploratory Data Analysis with R](https://leanpub.com/exdata), by
   Roger D. Peng
@@ -39,16 +39,23 @@ from Leanpub.com:
 * [Report Writing for Data Science in
   R](https://leanpub.com/reportwriting), by Roger D. Peng
 
-The following book may also be useful and is avialable in web form only:
+The following books may also be useful and are available in web format only:
+
+* [R Programming for Research](https://geanders.github.io/RProgrammingForResearch/), by Brooke Anderson and Rachel Severson
 
 * [Mastering Software Development in
   R](http://rdpeng.github.io/RProgDA), by Roger D. Peng, Sean Kross,
   and Brooke Anderson
 
+## Software
+
+We will make heavy use of R in this course, so you should have R installed. You can obtain R from the [Comprehensive R Archive Network](https://cran.rstudio.com). There are versions available for Mac, Windows, and Unix/Linux. This software is **required** for this course.	
+
+I will also make use of the RStudio interactive development environment (IDE). RStudio requires that R be installed, and so is a kind of "add-on" to R. I **strongly** recommend that you install this software. You can obtain the RStudio Desktop from the [RStudio web site](https://www.rstudio.com/products/rstudio/download3/).
 
 ## Homework
 
-There will be 3 assignments, due roughly every 2 weeks. Homeworks will be
+There will be 3 assignments, due roughly every 3 weeks. Homeworks will be
 submitted electronically via the Dropbox on the CoursePlus web site.
 
 The homework assignments will be due on 
