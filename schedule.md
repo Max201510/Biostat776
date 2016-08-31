@@ -23,9 +23,9 @@ All lectures take place 1:30-2:50pm in W2008.
 10/4 | Writing functions; Error handling| |
 10/6 | Loop functions| |
 10/7 | **Homework 2 due** | *Please submit your homework through the Courseplus dropbox* |
-10/11 | R packages | |
-10/13 | Building R packages | |
+10/11 | Building R packages | |
+10/13 | Data products and Shiny apps | |
 10/18 | Debugging; Profiling | |
-10/20 | Object-oriented programming| |
+10/20 | Object oriented programming | |
 10/25| Working with larger datasets |  |
 10/26 | **Homework 3 due** | *Please submit your homework through the Courseplus dropbox* |
