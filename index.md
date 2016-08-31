@@ -75,6 +75,10 @@ share analytic code or output. Please do not collaborate on write-up
 and interpretation. Please do not access or use solutions from any
 source before your homework assignment is submitted for grading.
 
+## Exams
+
+There are no exams in this course.
+
 ## Academic Ethics and Student Conduct Code
 
 Students enrolled in the Bloomberg School of Public Health of The Johns Hopkins University assume an obligation to conduct themselves in a manner appropriate to the University's mission as an institution of higher education. A student is obligated to refrain from acts which he or she knows, or under the circumstances has reason to know, impair the academic integrity of the University. Violations of academic integrity include, but are not limited to: cheating; plagiarism; knowingly furnishing false information to any agent of the University for inclusion in the academic record; violation of the rights and welfare of animal or human subjects in research; and misconduct as a member of either School or University committees or recognized groups or organizations.
