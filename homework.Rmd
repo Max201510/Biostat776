@@ -1,0 +1,16 @@
+---
+title: Homework
+layout: page
+permalink: /homework/
+---
+
+## Homework 1: Tidy Data
+
+The goal of the first assignment is to take datasets that are either messy or simply not tidy and to make them tidy datasets. The objective is to gain some familiarity with the functions in the `dplyr` and `tidyr` packages.
+
+
+## Homework 2
+
+
+## Homework 3
+
