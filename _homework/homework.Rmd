@@ -29,6 +29,17 @@ Running this function will also install a host of other packages on which these 
 
 Please write up your homework using R markdown and knitr. Compile your document as an HTML file submit your HTML file to the dropbox on Courseplus. Please **show all your code** for each of the answers to the three parts.
 
+### Reading
+
+For this homework, the following readings may be helpful:
+
+* [Chapter 7 of R Programming for Data Science](https://bookdown.org/rdpeng/rprogdatascience/using-the-readr-package.html)
+
+* [Chapter 13 of RPDS](https://bookdown.org/rdpeng/rprogdatascience/managing-data-frames-with-the-dplyr-package.html)
+
+* [Sections 1.2 through 1.5 of Mastering Software Development in R](http://rdpeng.github.io/RProgDA/the-importance-of-tidy-data.html)
+
+
 ### Part 1
 
 Load the `WorldPhones` dataset in the `datasets` package with
