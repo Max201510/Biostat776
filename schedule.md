@@ -11,7 +11,7 @@ All lectures take place 1:30-2:50pm in W2008.
 | Date | Topic | Other Resources & Notes |
 |:---- |:----- |:------------------------|
 9/1 | [Introduction, logistics, and major themes](../notes/pdf/introduction.pdf); [Overview of R](../notes/pdf/overview.pdf) | [R Programming for Data Science](https://leanpub.com/rprogramming), [R Programming for Research](https://geanders.github.io/RProgrammingForResearch/), [Mastering Software Development in R](http://rdpeng.github.io/RProgDA)|
-9/6 | Reproducible research| | 
+9/6 | Reproducible research | [Getting crushed](http://simplystatistics.org/2015/11/16/so-you-are-getting-crushed-on-the-internet-the-new-normal-for-academics/); [Just make your work reproducible](http://simplystatistics.org/2015/12/11/instead-of-research-on-reproducibility-just-do-reproducible-research/)
 9/8 | Getting and cleaning data; How to get help from others | [dplyr cheat sheet](http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 9/13 | Working with dates and times; Memory usage| |
 9/15 | **LECTURE CANCELLED** | [R language nitty gritty](../notes/pdf/r-nuts-bolts.pdf)  
