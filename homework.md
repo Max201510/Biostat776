@@ -15,7 +15,7 @@ layout: page
 
 The goal of the first assignment is to take datasets that are either messy or simply not tidy and to make them tidy datasets. The objective is to gain some familiarity with the functions in the `dplyr`, `tidyr`, `readxl`, and `readr` packages.
 
-Before attempting this assignment, you should first install the `dplyr` and `tidyr` packages if you haven't already. This can be done with the `install.packages()` function.
+Before attempting this assignment, you should first install the packages if you haven't already. This can be done with the `install.packages()` function.
 
 
 ```r
