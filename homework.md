@@ -136,7 +136,7 @@ Use the functions in the `dplyr` package to answer the following questions:
 
 3. Which monitoring site has the highest levels of "Sulfate PM2.5 LC"? Indicate the state code, county code, and site number.
 
-4. What is the difference in the average levels of "EC PM2.5 LC TOR" between California and New York?
+4. What is the difference in the average levels of "EC PM2.5 LC TOR" between California and Arizona?
 
 5. What are the median levels of "OC PM2.5 LC TOR" and "EC PM2.5 LC TOR" in the western and eastern U.S.? Define western as any monitoring location that has a `Longitude` less than -100.
 
