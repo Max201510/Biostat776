@@ -1,9 +1,10 @@
-% Managing Data Frames with `dplyr`
+% Managing Data with `dplyr` and `tidyr`
 % Biostatistics 140.776
 %
 
-```{r, echo=FALSE, results="hide"}
+```{r, include=FALSE}
 options(width = 50)
+knitr::opts_chunk$set(comment = NA)
 ```
 
 # dplyr
@@ -177,7 +178,7 @@ Generating summary statistics by stratum
 
 ```{r, tidy=FALSE}
 chicago <- mutate(chicago, 
-                  tempcat = factor(1 * (tmpd > 90), 
+                  tempcat = factor(tmpd > 90, 
                                    labels = c("cold", "hot")))
 hotcold <- group_by(chicago, tempcat)
 summarize(hotcold, pm25 = mean(pm25, na.rm = TRUE), 
@@ -231,4 +232,121 @@ Once you learn the dplyr "grammar" there are a few additional benefits
 
 * SQL interface for relational databases via the DBI package
 
+# tidyr
 
+The `tidyr` package helps with manipulation of data frames between "wide" and "long" formats, depending on what you're trying to do.
+
+* Sometimes the meaning of a "variable" depends on the application
+
+* Sometimes PM10, O3, NO2 are all different variables with continuous levels
+
+* Sometimes "Pollutant" is the variable with levels "PM10", "O3", and "NO2"
+
+# Long Format
+
+```{r, include=FALSE}
+library(tidyr)
+chicago <- readRDS("chicago.rds")
+chicago <- select(chicago, date, pm10tmean2, o3tmean2, no2tmean2) %>%
+        rename(pm10 = pm10tmean2, o3 = o3tmean2, no2 = no2tmean2) %>%
+        gather(pollutant, level, -date) %>%
+        arrange(date, pollutant)
+```
+
+Here are the Chicago pollution data in long format
+
+```{r}
+head(chicago)
+```
+
+# Long Format
+
+```{r}
+stats <- group_by(chicago, pollutant) %>% 
+        summarize(mean = mean(level, na.rm = TRUE),
+                  median = median(level, na.rm = TRUE),
+                  max = max(level, na.rm = TRUE))
+stats
+```
+
+# `gather`
+
+An alternate representation could have three variables: pollutant, statistic, and value
+
+* `gather` is a function that "gathers" multiple columns and essential sticks them into one column
+
+* The names of multiple columns become levels of a single variable
+
+* In this case mean, median, max --> levels of a "statistic" variable
+
+# `gather`
+
+```{r}
+gather(stats, statistic, value, -pollutant)
+```
+
+# `spread`
+
+The `spread` function does the inverse of the `gather` function
+
+* `spread` takes a single variable (with multiple levels) and *spreads* them across multiple columns
+
+* Sometimes more intuitive if you want to compute a statistic across multiple levels/variables
+
+* e.g. Compute the maximum of three different pollutants on each day and create a new variable
+
+# `spread`
+
+```{r}
+wide <- spread(chicago, pollutant, level) 
+head(wide)
+```
+
+# `spread`
+
+```{r}
+mutate(wide, max = pmax(no2, o3, pm10, na.rm = TRUE)) %>%
+        head
+```
+
+# `separate`
+
+Sometimes you need to split one column into two separate columns.
+
+```{r, include=FALSE}
+x <- paste(rep(c("happy", "sad"), each = 3), rep(c("working", "partying"), 3), sep = "-")
+m <- data.frame(mood = x, day = c(rep("Sunday", 4), rep("Monday", 2)))
+```
+
+```{r}
+m
+```
+
+# `separate`
+
+```{r}
+m <- separate(m, mood, c("state", "activity"), sep = "-")
+m
+```
+
+# `unite`
+
+The inverse of `separate`
+
+```{r}
+unite(m, mood, state, activity, sep = "-")
+```
+
+# Summary
+
+`dplyr`
+
+* Verbs/functions for manipulating data frames in tidy format
+
+* select, filter, arrange, group_by, summarize, rename, mutate
+
+`tidyr`
+
+* Transform data frames from wide to long formats
+
+* spread, gather, separate, unite
