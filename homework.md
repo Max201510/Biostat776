@@ -143,7 +143,15 @@ Use the functions in the `dplyr` package to answer the following questions:
 
 ### Part 3
 
-Use the `readxl` package to read the file [aqs_sites.xlsx](../data/aqs_sites.xlsx) into R (you may need to install the package first). This file contains metadata about each of the monitoring sites in the EPA's monitoring system. In particular, the `Land Use` and `Location Setting` variables contain information about what kinds of areas the monitors are located in (i.e. "residential" vs. "forest").
+Use the `readxl` package to read the file
+[aqs_sites.xlsx](../data/aqs_sites.xlsx) into R (you may need to
+install the package first). You may get some warnings when reading in the data but you can ignore these for now.
+
+This file contains metadata about each of
+the monitoring sites in the EPA's monitoring system. In particular,
+the `Land Use` and `Location Setting` variables contain information
+about what kinds of areas the monitors are located in
+(i.e. "residential" vs. "forest").
 
 Use the functions in the `dplyr` and `tidyr` packages to answer the following questions.
 
