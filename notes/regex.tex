@@ -65,37 +65,33 @@ Regular expressions have a rich set of metacharacters
 Simplest pattern consists only of literals.  The literal ``nuclear''
 would match to the following lines:
 \begin{verbatim}
-Ooh. I just learned that to keep myself alive after a 
-nuclear blast! All I have to do is milk some rats 
-then drink the milk. Aweosme. :}
+Why do we trust our government with 8,500 nuclear weapons, 
+but not to administer health care?
 
-Laozi says nuclear weapons are mas macho
+Beginning to regret that nuclear taco
 
-Chaos in a country that has nuclear weapons -- not good.
+Apple is all about nuclear family level network effects.
 
-my nephew is trying to teach me nuclear physics, or 
-possibly just trying to show me how smart he is 
-so I'll be proud of him [which I am].
-
-lol if you ever say "nuclear" people immediately think 
-DEATH by radiation LOL
+"I'm going to destroy Android, because it's a stolen 
+product. I'm willing to go thermonuclear war on 
+this." - Steve Jobs
 \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]{Literals}
 The literal ``Obama'' would match to the following lines
 \begin{verbatim}
-30 minutes away until at Noon...team coverage of 
-President #Obama visit to NYS
+I am going to take so many pictures of Michelle Obama 
+today...
 
-Up next on CNN Early Start, Retired Air Force Colonel will 
-talk to us about President Barack Obama new defense strategy
+It's Official...The USA Has Been Renamed. It is Now 
+the USSR (United States Socialist Republic) 
+Thanks Mr Obama.
 
-Pres. Obama said, "elections have consequences" during the 
-health care debate Is this note the same
+I'm #Obama all the way I think 4 years is too short 
+to be in office
 
-#BecauseOfObama I realized the #democrats & #republicans 
-work for #banksters and lobbyists and not the people.
+Obama's budget was rejected by the Senate 99 - 0.
 \end{verbatim}
 \end{frame}
 
@@ -106,7 +102,7 @@ Simplest pattern consists only of literals; a match occurs if the
 sequence of literals occurs anywhere in the text being tested
 \item
 What if we only want the word ``Obama'', but no hashtags? Or sentences that end in 
-the word ``Clinton'', or ``clinton'' or ``clinto''? 
+the word ``Clinton'', or ``clinton''? 
 \end{itemize}
 \end{frame}
 
@@ -132,11 +128,15 @@ Some metacharacters represent the start of a line
 \end{verbatim}
 will match the lines 
 \begin{verbatim}
-i think we all rule for participating
-i think i have been outed
-i think this will be quite fun actually
-i think i need to go to work
-i think i first saw zombo in 1999.
+i think should text me.
+
+i think i lost my laptop...
+
+i think "hipster shorts" are the ugliest stupidest 
+things ever
+
+i think i'm gonna go for a run after work 
+today.....i think....=\
 \end{verbatim}
 \end{frame}
 
@@ -148,9 +148,13 @@ morning$
 will match the lines 
 \begin{verbatim}
 i hate parting ways with my blankie in the morning
+
 #oomf is cracking me up this morning
+
 so watsup this morning
+
 No plans tonight have to be to work to early in the morning
+
 Nothin like sprinting after a bus on a Tuesday morning
 \end{verbatim}
 \end{frame}
@@ -163,11 +167,15 @@ match
 \end{verbatim}
 will match the lines 
 \begin{verbatim}
-The democrats are playing, "Name the worst thing about Bush!"
-I smelled the desert creosote bush, brownies, BBQ chicken
-BBQ and bushwalking at Molonglo Gorge
-Bush TOLD you that North Korea is part of the Axis of Evil 
-I'm listening to Bush - Hurricane (Album Version)
+Headed to King George to be with Pern, & Bushel of 
+whole crabs waiting and doing some party planning!
+
+Eco design pioneer Barbara Dornbush speaking 
+June 17 11:30AM at Verde Home in Westside.
+
+Kanye's as stupid as Bush.
+
+is bush league ..... thanks for nothing!
 \end{verbatim}
 \end{frame}
 
@@ -177,14 +185,13 @@ I'm listening to Bush - Hurricane (Album Version)
 \end{verbatim}
 will match
 \begin{verbatim}
-i am so angry at my boyfriend i can't even bear to 
-look at him
+I am BEYOND irritated right now
 
 i am boycotting the apple store
 
 I am twittering from iPhone
 
-I am a very vengeful person when you ruin my sweetheart.
+i am going to dream in XML tonight. ugh.
 
 I am so over this. I need food. Mmmm bacon...
 \end{verbatim}
@@ -230,27 +237,34 @@ helicopter under water? hmmm
 \end{verbatim}
 will match the lines 
 \begin{verbatim}
-its stupid the post 9-11 rules 
-if any 1 of us did 9/11 we would have been caught in days.
-NetBios: scanning ip 203.169.114.66
-Front Door 9:11:46 AM
-Sings: 0118999881999119725...3 !
+With the anniversary of 9/11 coming up, I just 
+wanted to wish the world some Peace.
+
+tune in tomorrow morning(9-11)to The Weekend Sports 
+Buzz on 1450am
+
+why do i ALWAYS look at the clock at 1:43 and 9:11?????
+
+Stock up now for the holidays at Siesel's Meats 
+in San Diego, CA 92110
 \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]{More Metacharacters: $|$}
-This does not mean ``pipe'' in the context of regular expressions;
-instead it translates to ``or''; we can use it to combine two
+The $|$ character indicates a logical ``or''; we can use it to combine two
 expressions, the subexpressions being called alternatives
 \begin{verbatim}
 flood|fire
 \end{verbatim}
 will match the lines 
 \begin{verbatim}
-is firewire like usb on none macs? 
-the global flood makes sense within the context of the bible 
-yeah ive had the fire on tonight 
-... and the floods, hurricanes, killer heatwaves, rednecks, gun nuts, etc. 
+eating some firehouse subs. m m
+
+On way home drove by flooding areas of the San Diego 
+River, was okay then, but how long will it be okay 
+with the rain still coming down?
+
+Between you and me, there are wildfires.
 \end{verbatim}
 \end{frame}
 
@@ -262,9 +276,14 @@ flood|earthquake|hurricane|coldfire
 will match the lines 
 \begin{verbatim}
 Not a whole lot of hurricanes in the Arctic.
-We do have earthquakes nearly every day somewhere in our State 
+
+We do have earthquakes nearly every day somewhere 
+in our State 
+
 hurricanes swirl in the other direction 
+
 coldfire is STRAIGHT! 
+
 'cause we keep getting earthquakes
 \end{verbatim}
 \end{frame}
@@ -276,11 +295,14 @@ The alternatives can be real expressions and not just literals
 \end{verbatim}
 will match the lines 
 \begin{verbatim}
-good to hear some good knews from someone here 
-Good afternoon fellow american infidels! 
-good on you-what do you drive? 
-Katie... guess they had bad experiences... 
-my middle name is trouble, Miss Bad News
+Good morning tweeps
+
+goodnight handsome <3
+
+this is a bad idea for Netflix
+
+Not a bad way to put it. Content has to be useful 
+to work, and must serve our readers and users.
 \end{verbatim}
 \end{frame}
 
@@ -292,12 +314,13 @@ alternatives
 \end{verbatim}
 will match the lines 
 \begin{verbatim}
-bad habbit 
-bad coordination today 
-good, becuase there is nothing worse than a man in kinky underwear
-Badcop, its because people want to use drugs 
-Good Monday Holiday 
-Good riddance to Limey
+good for you!
+
+Good. How is the house
+
+Bad dreams are overrated.
+
+Badger Herald uses really weak reasoning in Op-Ed
 \end{verbatim}
 \end{frame}
 
@@ -309,7 +332,10 @@ The question mark indicates that the indicated expression is optional
 will match the lines 
 \begin{verbatim}
 i bet i can spell better than you and george bush combined
-BBC reported that President George W. Bush claimed God told him to invade Iraq 
+
+BBC reported that President George W. Bush claimed 
+God told him to invade Iraq 
+
 a bird in the hand is worth two george bushes 
 \end{verbatim}
 \end{frame}
@@ -335,8 +361,11 @@ least one of the item''
 will match the lines 
 \begin{verbatim}
 anyone wanna chat? (24, m, germany)
+
 hello, 20.m here... ( east area + drives + webcam ) 
+
 (he means older men) 
+
 ()
 \end{verbatim}
 \end{frame}
@@ -351,8 +380,12 @@ least one of the item''
 will match the lines 
 \begin{verbatim}
 working as MP here 720 MP battallion, 42nd birgade 
-so say 2 or 3 years at colleage and 4 at uni makes us 23 when and if we finish
+
+so say 2 or 3 years at colleage and 4 at uni makes us 23 
+when and if we finish
+
 it went down on several occasions for like, 3 or 4 *days*
+
 Mmmm its time 4 me 2 go 2 bed
 \end{verbatim}
 \end{frame}
