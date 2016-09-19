@@ -26,8 +26,8 @@ Textbook key
 9/22 | Plotting data with ggplot2 (part 2)| [Ch. 15](https://bookdown.org/rdpeng/exdata/the-ggplot2-plotting-system-part-2.html) of EDAR; [Ch. 8](https://bookdown.org/rdpeng/exdata/graphics-devices.html) of EDAR |
 9/27 | Mapping; Color | |
 9/29 | Control structures and functions| |
-10/4 | Writing functions; Error handling| | [Ch 2.1](http://rdpeng.github.io/RProgDA/functions.html) of MSDR; [Ch. 15](https://bookdown.org/rdpeng/rprogdatascience/functions.html) of RPDS
-10/6 | Loop functions| | [Ch. 16](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html) of RPDS
+10/4 | Writing functions; Error handling| [Ch 2.1](http://rdpeng.github.io/RProgDA/functions.html) of MSDR; [Ch. 15](https://bookdown.org/rdpeng/rprogdatascience/functions.html) of RPDS
+10/6 | Loop functions| [Ch. 16](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html) of RPDS
 10/7 | **Homework 2 due** | *Please submit your homework through the [Courseplus](https://courseplus.jhu.edu) dropbox* |
 10/11 | Building R packages | |
 10/13 | Data products and Shiny apps | |
