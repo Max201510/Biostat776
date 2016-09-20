@@ -11,6 +11,8 @@ layout: page
 
 ## Homework 1: Tidy Data
 
+[Solution](homework1_sol)
+
 ### DUE: 9/16
 
 The goal of the first assignment is to take datasets that are either messy or simply not tidy and to make them tidy datasets. The objective is to gain some familiarity with the functions in the `dplyr`, `tidyr`, `readxl`, and `readr` packages.
