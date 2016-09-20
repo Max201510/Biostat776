@@ -5,6 +5,7 @@ output:
     keep_md: yes
 permalink: /homework/homework1_sol.html
 layout: default 
+exclude: true
 ---
 
 
