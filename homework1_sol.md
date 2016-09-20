@@ -4,7 +4,7 @@ output:
   html_document: 
     keep_md: yes
 permalink: /homework/homework1_sol.html
-layout: page
+layout: default 
 ---
 
 
