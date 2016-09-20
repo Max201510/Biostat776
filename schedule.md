@@ -22,7 +22,7 @@ Textbook key
 9/13 | [Working with dates/times](../notes/pdf/Dates.pdf); [regular expressions](../notes/pdf/regex.pdf); [regex in R](../notes/pdf/regex_in_R.pdf) | [Section 1.6](https://bookdown.org/rdpeng/RProgDA/working-with-dates-times-time-zones.html) of MSDR; [Ch. 12](https://bookdown.org/rdpeng/rprogdatascience/dates-and-times.html) of RPDS | |
 9/15 | **LECTURE CANCELLED** | [Ch. 5](https://bookdown.org/rdpeng/rprogdatascience/r-nuts-and-bolts.html) of RPDS | [R language nitty gritty](../notes/pdf/r-nuts-bolts.pdf)  
 9/16 | **Homework 1 due** | *Please submit your homework through the [Courseplus](https://courseplus.jhu.edu) dropbox* |
-9/20 | Principles of data graphics; ggplot2 (part 1)| [Ch. 5](https://bookdown.org/rdpeng/exdata/principles-of-analytic-graphics.html) of EDAR; [Ch. 7](https://bookdown.org/rdpeng/exdata/plotting-systems.html) of EDAR; [Ch. 14](https://bookdown.org/rdpeng/exdata/the-ggplot2-plotting-system-part-1.html) of EDAR|
+9/20 | [Principles of data graphics](../notes/pdf/principlesgraphics.pdf); ggplot2 (part 1)| [Ch. 5](https://bookdown.org/rdpeng/exdata/principles-of-analytic-graphics.html) of EDAR; [Ch. 7](https://bookdown.org/rdpeng/exdata/plotting-systems.html) of EDAR; [Ch. 14](https://bookdown.org/rdpeng/exdata/the-ggplot2-plotting-system-part-1.html) of EDAR|
 9/22 | Plotting data with ggplot2 (part 2)| [Ch. 15](https://bookdown.org/rdpeng/exdata/the-ggplot2-plotting-system-part-2.html) of EDAR; [Ch. 8](https://bookdown.org/rdpeng/exdata/graphics-devices.html) of EDAR |
 9/27 | Mapping; Color | |
 9/29 | Control structures and functions| |
