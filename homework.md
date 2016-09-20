@@ -11,7 +11,7 @@ layout: page
 
 ## Homework 1: Tidy Data
 
-[Solution](../homework1_sol.html)
+[Solution](homework1_sol.html)
 
 ### DUE: 9/16
 
