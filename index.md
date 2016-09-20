@@ -34,7 +34,7 @@ from Leanpub.com:
   by Roger D. Peng (you can also read this book [on the web](https://bookdown.org/rdpeng/rprogdatascience/))
 
 * [Exploratory Data Analysis with R](https://leanpub.com/exdata), by
-  Roger D. Peng (you can read this book [on the web](https://bookdown.org/rdpeng/exdata/)
+  Roger D. Peng (you can read this book [on the web](https://bookdown.org/rdpeng/exdata/))
 
 * [Report Writing for Data Science in
   R](https://leanpub.com/reportwriting), by Roger D. Peng
