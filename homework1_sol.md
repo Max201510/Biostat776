@@ -3,6 +3,7 @@ title: "Homework 1 Solution"
 output: 
   html_document: 
     keep_md: yes
+permalink: /homework/
 layout: page
 ---
 
