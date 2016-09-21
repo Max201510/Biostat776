@@ -7,27 +7,78 @@ permalink: /homework/
 layout: page
 ---
 
+
+
 ## Homework 2: Functions
 
+### DUE: 10/7
+
+The goal of this assignment is to get used to designing and writing functions. Writing functions involves thinking about how code should be divided up and what the interface/arguments should be. In addition, you need to think about what the function will return as output.
+
+### Homework Submission
+
+Please write up your homework using R markdown and knitr. Compile your document as an HTML file submit your HTML file to the dropbox on Courseplus. Please **show all your code** for each of the answers to the three parts.
+
+### Part 1
+
+Write a function that computes the factorial of an integer greater than or equal to 0. The function should have the following skeleton.
+
+
+```r
+Factorial <- function(n) {
+        ## Your code goes here
+}
+```
+
+The function should return an integer that is equal to n! = n * (n-1) * (n-2) * ... * 2 * 1. Note that 0! is defined to be 1. If the `Factorial` function is given an integer `n` that is less than 0, it should return the value `NaN`. 
+
+* You can assume that the input value `n` will always be a *single* integer. 
+
+* Do not worry about non-integer inputs.
+
+* Do not use the functions `factorial()` or `gamma()`, which already exist in R.
+
+Your function should produce output like the following:
+
+```r
+Factorial(4)
+[1] 24
+Factorial(0)
+[1] 1
+Factorial(-4)
+[1] NaN
+```
+
+### Part 2
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+---
 
 
 ## Homework 1: Tidy Data
 
-[Solution](homework1_sol.html)
-
 ### DUE: 9/16
 
-The goal of the first assignment is to take datasets that are either messy or simply not tidy and to make them tidy datasets. The objective is to gain some familiarity with the functions in the `dplyr`, `tidyr`, `readxl`, and `readr` packages.
+The goal of the first assignment is to take datasets that are either messy or simply not tidy and to make them tidy datasets. The objective is to gain some familiarity with the functions in the `dplyr`, `tidyr`, and `readr` packages.
 
-Before attempting this assignment, you should first install the packages if you haven't already. This can be done with the `install.packages()` function.
+Before attempting this assignment, you should first install the `dplyr` and `tidyr` packages if you haven't already. This can be done with the `install.packages()` function.
 
 
 ```r
-install.packages(c("dplyr", "tidyr", "readr", "readxl"))
+install.packages(c("dplyr", "tidyr", "readr"))
 ```
 
 Running this function will also install a host of other packages on which these two depend so it make take a minute or two.
@@ -144,22 +195,16 @@ Use the functions in the `dplyr` package to answer the following questions:
 
 3. Which monitoring site has the highest levels of "Sulfate PM2.5 LC"? Indicate the state code, county code, and site number.
 
-4. What is the difference in the average levels of "EC PM2.5 LC TOR" between California and Arizona?
+4. What is the difference in the average levels of "EC PM2.5 LC TOR" between California and Arizona
 
 5. What are the median levels of "OC PM2.5 LC TOR" and "EC PM2.5 LC TOR" in the western and eastern U.S.? Define western as any monitoring location that has a `Longitude` less than -100.
 
 
 ### Part 3
 
-Use the `readxl` package to read the file
-[aqs_sites.xlsx](../data/aqs_sites.xlsx) into R (you may need to
-install the package first). You may get some warnings when reading in the data but you can ignore these for now.
+Use the `readxl` package to read the file [aqs_sites.xlsx](../data/aqs_sites.xlsx) into R (you may need to install the package first). You may get some warnings when reading in the data but you can ignore these for now.
 
-This file contains metadata about each of
-the monitoring sites in the EPA's monitoring system. In particular,
-the `Land Use` and `Location Setting` variables contain information
-about what kinds of areas the monitors are located in
-(i.e. "residential" vs. "forest").
+This file contains metadata about each of the monitoring sites in the EPA's monitoring system. In particular, the `Land Use` and `Location Setting` variables contain information about what kinds of areas the monitors are located in (i.e. "residential" vs. "forest").
 
 Use the functions in the `dplyr` and `tidyr` packages to answer the following questions.
 
