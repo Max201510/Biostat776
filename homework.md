@@ -7,6 +7,12 @@ permalink: /homework/
 layout: page
 ---
 
+## Homework 2: Functions
+
+
+
+
+
 
 
 ## Homework 1: Tidy Data
