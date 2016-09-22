@@ -63,7 +63,7 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 mie <- read_csv("data/MIE.csv", col_types = "iicdiDc")
-mie.sub <- filter(mie, id == 2 & visit == 0 
+mie.sub <- filter(mie, id == 20 & visit == 0 
                   & room == "bedroom")
 qplot(timepoint, value, data = mie.sub)
 ```
@@ -101,7 +101,7 @@ Your tasks for this part are
 
 2. Implement your function in R.
 
-3. Run your function on the [test datasets]() provided for this part of the homework and present the output. Note that not everyone's function will give the same output for the test datasets, however the output that your function gives **should be described in the specification document**. If your function produces an output that is not specified, this is considered a bug.
+3. Run your function on the [test vectors](../data/median_testdata.zip) provided for this part of the homework and present the output. Note that not everyone's function will give the same output for the test datasets, however the output that your function gives **should be described in the specification document**. If your function produces an output that is not specified, this is considered a bug.
 
 
 
