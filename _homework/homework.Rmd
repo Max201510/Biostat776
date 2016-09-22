@@ -64,12 +64,14 @@ The zip file for this assignment contains two files
 
 The following code .....
 
-```{r}
+```{r,message=FALSE}
 library(readr)
-mie <- read_csv("data/MIE.csv", col_types = "iicdiDcci")
-group_by(mie, id) %>% summarize(n = n(), missing = sum(is.na(mie_final)),
-                                mean = mean(mie_final), sd = sd(mie_final))
-group_by(mie, room) %>% summarize(mean = mean(mie_final), nsubject = length(unique(id)))
+library(dplyr)
+library(ggplot2)
+mie <- read_csv("data/MIE.csv", col_types = "icdiDc")
+mie.sub <- filter(mie, id == 2 & visit == 0 
+                  & room == "bedroom")
+
 ```
 
 
