@@ -23,7 +23,7 @@ Textbook key
 9/15 | **LECTURE CANCELLED** | [Ch. 5](https://bookdown.org/rdpeng/rprogdatascience/r-nuts-and-bolts.html) of RPDS | [R language nitty gritty](../notes/pdf/r-nuts-bolts.pdf)  
 9/16 | **Homework 1 due** | *Please submit your homework through the [Courseplus](https://courseplus.jhu.edu) dropbox* |
 9/20 | [Principles of data graphics](../notes/pdf/principlesgraphics.pdf); [ggplot2 (part 1)](../notes/pdf/ggplot2_part1.pdf)| [Ch. 5](https://bookdown.org/rdpeng/exdata/principles-of-analytic-graphics.html) of EDAR; [Ch. 7](https://bookdown.org/rdpeng/exdata/plotting-systems.html) of EDAR; [Ch. 14](https://bookdown.org/rdpeng/exdata/the-ggplot2-plotting-system-part-1.html) of EDAR|
-9/22 | Plotting data with ggplot2 (part 2); Graphics devices| [Ch. 15](https://bookdown.org/rdpeng/exdata/the-ggplot2-plotting-system-part-2.html) of EDAR; [Ch. 8](https://bookdown.org/rdpeng/exdata/graphics-devices.html) of EDAR |
+9/22 | [Plotting data with ggplot2 (part 2)](../notes/pdf/ggplot2_part2.pdf); [Graphics devices](../notes/pdf/grdevices.pdf)| [Ch. 15](https://bookdown.org/rdpeng/exdata/the-ggplot2-plotting-system-part-2.html) of EDAR; [Ch. 8](https://bookdown.org/rdpeng/exdata/graphics-devices.html) of EDAR |
 9/27 | Control structures and functions| [Ch. 14](https://bookdown.org/rdpeng/rprogdatascience/control-structures.html) of RPDS |
 9/29 | Writing functions; Error handling| [Ch 2.1](http://rdpeng.github.io/RProgDA/functions.html) of MSDR; [Ch. 15](https://bookdown.org/rdpeng/rprogdatascience/functions.html) of RPDS
 10/4 | Loop functions| [Ch. 16](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html) of RPDS
