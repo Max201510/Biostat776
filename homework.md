@@ -51,16 +51,75 @@ Factorial(-4)
 
 ### Part 2
 
+The data for this part come from a study of indoor air pollution and respiratory disease conducted here at Johns Hopkins. A high-resolution air pollution monitor was placed in each home to collect continuous levels of particulate matter over the period of a few days (each measurement represents a 5-minute average). In addition, measurements were taken in different rooms of the house as well as on multiple visits. 
+
+Initially, we'd like to explore the data for each subject (indicated by the `id` column) and so we can make some exploratory time series plots of the data.
+
+The following code plots the data from one subject (`id == 2`) on the baseline visit (`visit == 0`) and in the bedroom (`room == "bedroom"`). 
 
 
+```r
+library(readr)
+library(dplyr)
+library(ggplot2)
+mie <- read_csv("data/MIE.csv", col_types = "iicdiDc")
+```
+
+```
+Error: 'data/MIE.csv' does not exist in current working directory ('/Users/rdpeng/Biostat776/_homework').
+```
+
+```r
+mie.sub <- filter(mie, id == 20 & visit == 0 
+                  & room == "bedroom")
+```
+
+```
+Error in filter_(.data, .dots = lazyeval::lazy_dots(...)): object 'mie' not found
+```
+
+```r
+qplot(timepoint, value, data = mie.sub)
+```
+
+```
+Error in ggplot(data, aesthetics, environment = env): object 'mie.sub' not found
+```
+
+While this code is useful, it only provides us information on one subject, on one visit, in one room. We could cut and paste this code to look at other subjects/visits/rooms, but that can be error prone and just plain messy.
+
+The aim here is to **design** and **implement** a function that can be re-used to visualize all of the data in this dataset. 
+
+1. There are 3 aspects that may vary in the dataset: The **id**, the **visit**, and the **room**. Note that not all combinations of id, visit, and room have measurements.
+
+2. Your function should take as input **one** of the 3 possible factors. You need to decide which one of those it will be.
+
+3. Given the input from the user, your function should present all of the data for that input. For example, if the input is `id = 2`, then you should plot the data for all rooms and all visits. If you the input is `visit = 0`, then you should plot data for all ids and all rooms, etc. It should be possible visualize the entire dataset with your function (through repeated calls to your function).
+
+4. You may choose to write multiple functions to support your "main" function. That is okay.
+
+4. If the user enters an input that does not exist in the dataset, your function should catch that and report an error (via the `stop()` function).
+
+For your homework submission
+
+1. Write a short description of how you chose to design your function and why. 
+
+2. Present the code for your function in the R markdown document.
+
+3. Include at least one example of output from your function. 
 
 
+### Part 3
 
+For this part you will write a function that computes a bootstrap 95% confidence interval for the median of a vector of numerical data. The median does not have a closed-form representation of the confidence interval like the mean does, so we typically have to resort to resampling techniques like the bootstrap to compute a confidence interval.
 
+Your tasks for this part are
 
+1. Write a specification for your function (in English, not code), describing how the function should work. In particular, it should specify and describe the **inputs** to the function and the **outputs**. If there are any requirements for the inputs (for example, there should not be missing values), then this should be mentioned in the specification. If your function returns errors for some inputs, this should also be described.
 
+2. Implement your function in R.
 
-
+3. Run your function on the [test vectors](../data/median_testdata.zip) provided for this part of the homework and present the output. Note that not everyone's function will give the same output for the test datasets, however the output that your function gives **should be described in the specification document**. If your function produces an output that is not specified, this is considered a bug.
 
 
 
