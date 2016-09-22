@@ -63,28 +63,12 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 mie <- read_csv("data/MIE.csv", col_types = "iicdiDc")
-```
-
-```
-Error: 'data/MIE.csv' does not exist in current working directory ('/Users/rdpeng/Biostat776/_homework').
-```
-
-```r
 mie.sub <- filter(mie, id == 20 & visit == 0 
                   & room == "bedroom")
-```
-
-```
-Error in filter_(.data, .dots = lazyeval::lazy_dots(...)): object 'mie' not found
-```
-
-```r
 qplot(timepoint, value, data = mie.sub)
 ```
 
-```
-Error in ggplot(data, aesthetics, environment = env): object 'mie.sub' not found
-```
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
 
 While this code is useful, it only provides us information on one subject, on one visit, in one room. We could cut and paste this code to look at other subjects/visits/rooms, but that can be error prone and just plain messy.
 
