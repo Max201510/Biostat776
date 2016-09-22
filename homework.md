@@ -113,6 +113,17 @@ For your homework submission
 
 For this part you will write a function that computes a bootstrap 95% confidence interval for the median of a vector of numerical data. The median does not have a closed-form representation of the confidence interval like the mean does, so we typically have to resort to resampling techniques like the bootstrap to compute a confidence interval.
 
+The bootstrap procedure works as follows. For a given vector of data,
+
+1. We resample the data with replacement to obtain a new dataset of the same size (but slightly different). This can be done with `sample(x, replace = TRUE)`.
+
+2. With the new resampled dataset, compute the median and store it.
+
+3. Repeat the previous 2 steps many times (usually at least 1,000 times but this could be configurable).
+
+4. Once you have computed all of the medians from all of the resampled datasets, compute the 2.5% and the 97.5% quantiles of the medians. This is your 95% confidence interval.
+
+
 Your tasks for this part are
 
 1. Write a specification for your function (in English, not code), describing how the function should work. In particular, it should specify and describe the **inputs** to the function and the **outputs**. If there are any requirements for the inputs (for example, there should not be missing values), then this should be mentioned in the specification. If your function returns errors for some inputs, this should also be described.
