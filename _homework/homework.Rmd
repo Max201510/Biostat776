@@ -8,7 +8,7 @@ layout: page
 ---
 
 ```{r,echo=FALSE}
-knitr::opts_chunk$set(comment = NA)
+knitr::opts_chunk$set(comment = NA, fig.path = "homework/")
 ```
 
 ## Homework 2: Functions
@@ -37,7 +37,7 @@ The function should return an integer that is equal to n! = n * (n-1) * (n-2) * 
 
 * Do not worry about non-integer inputs.
 
-* Do not use the functions `factorial()` or `gamma()`, which already exist in R.
+* Do not use the functions `factorial()`, `gamma()`, `lgamma()`, which already exist in R.
 
 Your function should produce output like the following:
 
@@ -53,6 +53,8 @@ Factorial(-4)
 ### Part 2
 
 The data for this part come from a study of indoor air pollution and respiratory disease conducted here at Johns Hopkins. A high-resolution air pollution monitor was placed in each home to collect continuous levels of particulate matter over the period of a few days (each measurement represents a 5-minute average). In addition, measurements were taken in different rooms of the house as well as on multiple visits. 
+
+* [MIE data](../data/MIE.zip)
 
 Initially, we'd like to explore the data for each subject (indicated by the `id` column) and so we can make some exploratory time series plots of the data.
 

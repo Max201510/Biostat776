@@ -36,7 +36,7 @@ The function should return an integer that is equal to n! = n * (n-1) * (n-2) * 
 
 * Do not worry about non-integer inputs.
 
-* Do not use the functions `factorial()` or `gamma()`, which already exist in R.
+* Do not use the functions `factorial()`, `gamma()`, `lgamma()`, which already exist in R.
 
 Your function should produce output like the following:
 
@@ -53,6 +53,8 @@ Factorial(-4)
 
 The data for this part come from a study of indoor air pollution and respiratory disease conducted here at Johns Hopkins. A high-resolution air pollution monitor was placed in each home to collect continuous levels of particulate matter over the period of a few days (each measurement represents a 5-minute average). In addition, measurements were taken in different rooms of the house as well as on multiple visits. 
 
+* [MIE data](../data/MIE.zip)
+
 Initially, we'd like to explore the data for each subject (indicated by the `id` column) and so we can make some exploratory time series plots of the data.
 
 The following code plots the data from one subject (`id == 2`) on the baseline visit (`visit == 0`) and in the bedroom (`room == "bedroom"`). 
@@ -68,7 +70,7 @@ mie.sub <- filter(mie, id == 20 & visit == 0
 qplot(timepoint, value, data = mie.sub)
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
+![plot of chunk unnamed-chunk-3](unnamed-chunk-3-1.png)
 
 While this code is useful, it only provides us information on one subject, on one visit, in one room. We could cut and paste this code to look at other subjects/visits/rooms, but that can be error prone and just plain messy.
 
