@@ -1,0 +1,15 @@
+% Handling Errors and Conditions
+% Biostatistics 140.776
+%
+
+# Conditions
+
+R has a few types of conditions that indicate something unexpected has occurred
+
+* error: a fatal condition; we cannot move forward with the code
+
+* warning: an unexpected condition; we can move on but you should know about it
+
+* message: something notable has occurred but you're probably fine
+
+# 
