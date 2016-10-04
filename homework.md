@@ -124,7 +124,8 @@ homework and present the output. You can load the data from the test vectors int
 source("median_testdata.R")
 ```
 
-after unzipping the zip archive file.
+after unzipping the zip archive file. You should now have objects
+`x1`, `x2`, ..., `x5` in your workspace.
  
 Note that not everyone's function will give the same output for the
 test datasets, however the output that your function gives **should be
