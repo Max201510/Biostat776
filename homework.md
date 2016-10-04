@@ -116,7 +116,20 @@ Your tasks for this part are
 
 2. Implement your function in R.
 
-3. Run your function on the [test vectors](../data/median_testdata.zip) provided for this part of the homework and present the output. Note that not everyone's function will give the same output for the test datasets, however the output that your function gives **should be described in the specification document**. If your function produces an output that is not specified, this is considered a bug.
+3. Run your function on the [test
+vectors](../data/median_testdata.zip) provided for this part of the
+homework and present the output. You can load the data from the test vectors into R by running
+
+```r
+source("median_testdata.R")
+```
+
+after unzipping the zip archive file.
+ 
+Note that not everyone's function will give the same output for the
+test datasets, however the output that your function gives **should be
+described in the specification document**. If your function produces
+an output that is not specified, this is considered a bug.
 
 
 
