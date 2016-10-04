@@ -30,8 +30,8 @@ Textbook key
 10/6 | Mapping; Color | |
 10/7 | **Homework 2 due** | *Please submit your homework through the [Courseplus](https://courseplus.jhu.edu) dropbox* |
 10/11 | Building R packages | |
-10/13 | Data products and Shiny apps | |
-10/18 |  | |
-10/20 | Object oriented programming | |
-10/25| Working with larger datasets |  |
+10/13 | Object oriented programming | |
+10/18 | Data products and Shiny apps | |
+10/20 | Functional programming | |
+10/25 | Working with larger datasets | | 
 10/26 | **Homework 3 due** | *Please submit your homework through the [Courseplus](https://courseplus.jhu.edu) dropbox* |
