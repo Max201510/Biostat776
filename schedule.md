@@ -27,7 +27,7 @@ Textbook key
 9/27 | [Control structures](../notes/pdf/control.pdf); [functions](../notes/pdf/functions.pdf)| [Ch. 14](https://bookdown.org/rdpeng/rprogdatascience/control-structures.html) of RPDS; [Ch 2.2](http://rdpeng.github.io/RProgDA/functions.html) of MSDR |
 9/29 | [More on Functions](../notes/pdf/functions2.pdf); [Loop functions](../notes/pdf/loop_functions.pdf) | [Ch. 16](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html) of RPDS; [Ch. 15](https://bookdown.org/rdpeng/rprogdatascience/functions.html) of RPDS
 10/4 |  [Debugging](../notes/pdf/debugging.pdf), [Profiling](../notes/pdf/RProfiler.pdf); [Error handling](../notes/pdf/error_handling.pdf) | [Ch 18](https://bookdown.org/rdpeng/rprogdatascience/debugging.html) of RPDS; [Ch 19](https://bookdown.org/rdpeng/rprogdatascience/profiling-r-code.html) of RPDS; [Ch 2.4](http://rdpeng.github.io/RProgDA/error-handling-and-generation.html) of MSDR
-10/6 | Mapping; Color | |
+10/6 | Parallel Programming; Color | |
 10/7 | **Homework 2 due** | *Please submit your homework through the [Courseplus](https://courseplus.jhu.edu) dropbox* |
 10/11 | Building R packages | |
 10/13 | Object oriented programming | |
