@@ -91,7 +91,7 @@ Unit: nanoseconds
 autoplot(m)
 ```
 
-![](homework/unnamed-chunk-5-1.png)<!-- -->
+![](unnamed-chunk-5-1.png)<!-- -->
 
 
 ### Part 2
@@ -126,13 +126,13 @@ viz_mie <- function(data, idviz) {
 viz_mie(mie, 14)
 ```
 
-![](homework/unnamed-chunk-8-1.png)<!-- -->
+![](unnamed-chunk-8-1.png)<!-- -->
 
 ```r
 viz_mie(mie, 54)
 ```
 
-![](homework/unnamed-chunk-8-2.png)<!-- -->
+![](unnamed-chunk-8-2.png)<!-- -->
 
 
 
@@ -149,7 +149,7 @@ viz_mie <- function(data, visitnum) {
 viz_mie(mie, 0)
 ```
 
-![](homework/unnamed-chunk-10-1.png)<!-- -->
+![](unnamed-chunk-10-1.png)<!-- -->
 
 ### Part 3
 
