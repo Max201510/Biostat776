@@ -9,7 +9,7 @@ layout: page
 
 [Solution](homework2_sol.html)
 
-### DsadfasdfUE: 10/7
+### DUE: 10/7
 
 The goal of this assignment is to get used to designing and writing functions. Writing functions involves thinking about how code should be divided up and what the interface/arguments should be. In addition, you need to think about what the function will return as output.
 
