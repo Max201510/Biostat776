@@ -1,17 +1,15 @@
 ---
 title: "Homework"
-output: 
-  html_document: 
-    keep_md: yes
 permalink: /homework/
 layout: page
 ---
 
 
-
 ## Homework 2: Functions
 
-### DUE: 10/7
+[Solution](homework2_sol.html)
+
+### DsadfasdfUE: 10/7
 
 The goal of this assignment is to get used to designing and writing functions. Writing functions involves thinking about how code should be divided up and what the interface/arguments should be. In addition, you need to think about what the function will return as output.
 
@@ -70,7 +68,7 @@ mie.sub <- filter(mie, id == 20 & visit == 0
 qplot(timepoint, value, data = mie.sub)
 ```
 
-![plot of chunk unnamed-chunk-3](unnamed-chunk-3-1.png)
+![](unnamed-chunk-3-1.png)<!-- -->
 
 While this code is useful, it only provides us information on one subject, on one visit, in one room. We could cut and paste this code to look at other subjects/visits/rooms, but that can be error prone and just plain messy.
 
@@ -116,21 +114,7 @@ Your tasks for this part are
 
 2. Implement your function in R.
 
-3. Run your function on the [test
-vectors](../data/median_testdata.zip) provided for this part of the
-homework and present the output. You can load the data from the test vectors into R by running
-
-```r
-source("median_testdata.R")
-```
-
-after unzipping the zip archive file. You should now have objects
-`x1`, `x2`, ..., `x5` in your workspace.
- 
-Note that not everyone's function will give the same output for the
-test datasets, however the output that your function gives **should be
-described in the specification document**. If your function produces
-an output that is not specified, this is considered a bug.
+3. Run your function on the [test vectors](../data/median_testdata.zip) provided for this part of the homework and present the output. Note that not everyone's function will give the same output for the test datasets, however the output that your function gives **should be described in the specification document**. If your function produces an output that is not specified, this is considered a bug.
 
 
 

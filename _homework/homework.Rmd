@@ -13,6 +13,8 @@ knitr::opts_chunk$set(comment = NA, fig.path = "homework/")
 
 ## Homework 2: Functions
 
+[Solution](homework2_sol.html)
+
 ### DUE: 10/7
 
 The goal of this assignment is to get used to designing and writing functions. Writing functions involves thinking about how code should be divided up and what the interface/arguments should be. In addition, you need to think about what the function will return as output.
