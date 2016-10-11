@@ -29,7 +29,7 @@ Textbook key
 10/4 |  [Debugging](../notes/pdf/debugging.pdf), [Profiling](../notes/pdf/RProfiler.pdf); [Error handling](../notes/pdf/error_handling.pdf) | [Ch 18](https://bookdown.org/rdpeng/rprogdatascience/debugging.html) of RPDS; [Ch 19](https://bookdown.org/rdpeng/rprogdatascience/profiling-r-code.html) of RPDS; [Ch 2.4](http://rdpeng.github.io/RProgDA/error-handling-and-generation.html) of MSDR
 10/6 | [Parallel Programming](../notes/pdf/parallel.pdf); [Color](../notes/pdf/RColors.pdf) | |
 10/7 | **Homework 2 due** | *Please submit your homework through the [Courseplus](https://courseplus.jhu.edu) dropbox* |
-10/11 | Building R packages | | [RStudio R package cheat sheet](http://www.rstudio.com/wp-content/uploads/2015/06/devtools-cheatsheet.pdf)
+10/11 | [Building R packages](../notes/pdf/Rpackages.pdf) | | [RStudio R package cheat sheet](http://www.rstudio.com/wp-content/uploads/2015/06/devtools-cheatsheet.pdf)
 10/13 | Object oriented programming | [Ch 2.9](https://bookdown.org/rdpeng/RProgDA/object-oriented-programming.html) of MSDR |
 10/18 | Functional programming | [Ch 2.3](https://bookdown.org/rdpeng/RProgDA/functional-programming.html) of MSDR|
 10/20 | Data products and Shiny apps | |
