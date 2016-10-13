@@ -4,7 +4,21 @@
 
 ```{r,include=FALSE}
 knitr::opts_chunk$set(comment = NA)
+options(width = 50)
 ```
+
+# Object Oriented Programming
+
+* An object is a thing
+
+* A class is a description of that thing
+
+* Everything in R is an **object** of a specific **class**
+
+* Functions can have different behaviors based on the class of an object
+
+* In OOP world, we revolve around the **data** (i.e. objects)
+
 
 # Classes and Methods
 
@@ -28,8 +42,9 @@ S3 classes/methods
 
 S4 classes/methods
 
-- more formal and rigorous
-- Included with S-PLUS 6 and R 1.4.0 (December 2001) 
+- More formal and rigorous
+- Classes have formal definitions
+- Included with R 1.4.0 (December 2001) 
 - Also called _new-style_ classes/methods
 
 
@@ -40,7 +55,7 @@ S4 classes/methods
 - Each system can be used fairly independently of the other.
 - Developers of new projects (you!) are encouraged to use the S4 style classes/methods.
     - Used extensively in the Bioconductor project
-- But many developers still use S3 classes/methods because they are “quick and dirty” (and easier).
+- But many developers still use S3 classes/methods because they are "quick and dirty" (and easier).
 - In this lecture we will focus primarily on S4 classes/methods
 - The code for implementing S4 classes/methods in R is in the *methods* package, which is usually loaded by default (but you can load it with `library(methods)` if for some reason it is not loaded)
 
@@ -50,7 +65,7 @@ S4 classes/methods
 
 - A class is a description of an thing. A class can be defined using `setClass()` in the *methods* package.
 - An _object_ is an instance of a class. Objects can be created using `new()`. 
-- A _method_ is a function that only operates on a certain class of objects.
+- A _method_ is a function that only operates on a certain class of objects. The `setMethod()` function defines methods.
 - A generic function is an R function which dispatches methods. A generic function typically encapsulates a “generic” concept (e.g. `plot`, `mean`, `predict`, ...)
     - The generic function does not actually do any computation.
 - A _method_ is the implementation of a generic function for an object of a particular class.
