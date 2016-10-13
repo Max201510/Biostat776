@@ -1,6 +1,6 @@
 ---
-title: "Homework"
-permalink: /homework/
+title: "Homework 1 & 2"
+permalink: /homework12/
 layout: page
 ---
 

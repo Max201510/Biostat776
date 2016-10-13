@@ -1,0 +1,10 @@
+---
+title: "Homework 3"
+layout: page
+permalink: /homework3/
+---
+
+```{r,echo=FALSE}
+knitr::opts_chunk$set(comment = NA, fig.path = "homework/")
+```
+
