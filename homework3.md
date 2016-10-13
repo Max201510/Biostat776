@@ -4,9 +4,7 @@ layout: page
 permalink: /homework3/
 ---
 
-```{r,echo=FALSE}
-knitr::opts_chunk$set(comment = NA, fig.path = "homework3/")
-```
+
 
 ## DUE: 10/28
 
@@ -51,118 +49,12 @@ For each generic/class combination you will need to implement a method, although
 To complete this Part, you can use either the S3 system or the S4 system to implement the necessary functions. It is probably not wise to mix any of the systems together, but you should be able to compete the assignment using any of the three systems. The amount of code required should be the same when using any of the systems.
 
 
-```{r,include=FALSE}
-library(dplyr)
-library(tidyr)
 
-make_LD <- function(x) {
-        structure(list(data = x), class = "LongitudinalData")
-}
-
-print.LongitudinalData <- function(x, ...) {
-        cat(sprintf("Longitudinal dataset with %d subjects", 
-                    length(unique(x$data$id))), "\n")
-}
-
-subject <- function(x, ...) {
-        UseMethod("subject")
-}
-
-subject.LongitudinalData <- function(x, subj_ID, ...) {
-        if(!(subj_ID %in% ID_list(x)))
-                return(NULL)
-        structure(list(id = subj_ID,
-                       data = filter_(x$data, ~ id == subj_ID) %>%
-                               select_(~ -id)),
-                  class = "LDSubject")
-}
-
-visit <- function(x, ...) UseMethod("visit")
-visit.LDSubject <- function(x, visitnum, ...) {
-        visits <- summary(x)$visit
-        if(!(visitnum %in% visits))
-                return(NULL)
-        structure(list(id = x$id,
-                       visit = visitnum,
-                       data = filter_(x$data, ~ visit == visitnum) %>%
-                               select_(~ -visit)),
-                  class = "LDVisit")
-}
-
-room <- function(x, ...) UseMethod("room")
-room.LDVisit <- function(x, roomname, ...) {
-        rooms <- unique(x$data$room)
-        if(!(roomname %in% rooms))
-                return(NULL)
-        structure(list(id = x$id,
-                       visit = x$visit,
-                       room = roomname,
-                       data = filter_(x$data, ~ room == roomname) %>%
-                               select_(~ -room)),
-                  class = "LDRoom")
-}
-
-pollutant <- function(x, ...) UseMethod("pollutant")
-pollutant.LDRoom <- function(x, ...) {
-        select(x$data, timepoint, value)
-}
-
-print.LDRoom <- function(x, ...) {
-        cat("ID:", x$id, "\n")
-        cat("Visit:", x$visit, "\n")
-        cat("Room:", x$room, "\n")
-        invisible(x)
-}
-
-summary.LDRoom <- function(object, ...) {
-        structure(list(id = object$id,
-                       value = summary(pollutant(object)$value)),
-                  class = "summary.LDRoom")
-}
-
-print.summary.LDRoom <- function(x, ...) {
-        cat("ID:", x$id, "\n")
-        print(x$value)
-}
-
-as.data.frame.LDRoom <- function(x, ...) {
-        x$data
-}
-
-ID_list <- function(x, ...) UseMethod("ID_list")
-ID_list.LongitudinalData <- function(x, ...) {
-        unique(x$data$id)
-}
-
-print.LDSubject <- function(x, ...) {
-        cat("Subject ID:", x$id, "\n")
-        invisible(x)
-}
-
-summary.LDSubject <- function(object, ...) {
-        value <- group_by(object$data, visit, room) %>%
-                summarize(mean = mean(value)) %>%
-                ungroup
-        structure(list(id = object$id,
-                       visit = unique(object$data$visit),
-                       room = unique(object$data$room),
-                       value = value),
-                  class = "summary.LDSubject")
-}
-
-print.summary.LDSubject <- function(x, ...) {
-        cat("ID:", x$id, "\n")
-        x$value %>%
-                spread(room, mean) %>%
-                as.data.frame %>%
-                print
-        
-}
-```
 
 For this assessment, you will need to implement the necessary functions to be able to execute the following code and to produce the associated output. The output of your function does not need to match *exactly*, but it should convey the same information. 
 
-```{r,message=FALSE,comment=NA}
+
+```r
 ## Read in the data
 library(readr)
 library(magrittr)
@@ -171,31 +63,97 @@ library(magrittr)
 data <- read_csv("data/MIE.csv")
 x <- make_LD(data)
 print(class(x))
-print(x)
+```
 
+```
+[1] "LongitudinalData"
+```
+
+```r
+print(x)
+```
+
+```
+Longitudinal dataset with 10 subjects 
+```
+
+```r
 ## Subject 10 doesn't exist
 out <- subject(x, 10)
 print(out)
+```
 
+```
+NULL
+```
+
+```r
 out <- subject(x, 14)
 print(out)
+```
 
+```
+Subject ID: 14 
+```
+
+```r
 out <- subject(x, 54) %>% summary
 print(out)
+```
 
+```
+ID: 54 
+  visit  bedroom       den living room    office
+1     0       NA        NA    2.792601 13.255475
+2     1       NA 13.450946          NA  4.533921
+3     2 4.193721  3.779225          NA        NA
+```
+
+```r
 out <- subject(x, 14) %>% summary
 print(out)
+```
 
+```
+ID: 14 
+  visit   bedroom family  room living room
+1     0  4.786592           NA     2.75000
+2     1  3.401442     8.426549          NA
+3     2 18.583635           NA    22.55069
+```
+
+```r
 out <- subject(x, 44) %>% visit(0) %>% room("bedroom")
 print(out)
+```
 
+```
+ID: 44 
+Visit: 0 
+Room: bedroom 
+```
+
+```r
 ## Show a summary of the pollutant values
 out <- subject(x, 44) %>% visit(0) %>% room("bedroom") %>% summary
 print(out)
+```
 
+```
+ID: 44 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    8.0    30.0    51.0    88.8    80.0   911.0 
+```
+
+```r
 out <- subject(x, 44) %>% visit(1) %>% room("living room") %>% summary
 print(out)
+```
 
+```
+ID: 44 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   2.75   14.00   24.00   41.37   37.00 1607.00 
 ```
 
 
