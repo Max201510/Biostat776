@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # S3 Class/Methods for Polygons
 ## Biostatistics 140.776
 
@@ -137,6 +142,6 @@ summary(x)
 
 Now, the plot method.
 
-```{r}
+```{r,fig.cap="Plot of polygon object"}
 plot(x, xlab = "x", ylab = "y", main = "Here's a polygon!")
 ```
