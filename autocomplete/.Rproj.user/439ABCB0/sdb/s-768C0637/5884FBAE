@@ -1,0 +1,17 @@
+{
+    "contents" : "load(\"words.rda\")\n\nautocomplete <- function(letters, data = words, word = NULL) {\n        ## If given a phrase, find the last word\n        r <- regexpr(\"[a-z0-9']+$\", letters, perl = TRUE)\n        letters <- regmatches(letters, r)\n        regex <- paste0(\"^\", letters)\n        idx <- grep(regex, words, perl = TRUE)\n        if(length(idx) > 0)\n                data[idx[1]]\n        else\n                letters\n}\n\n\n",
+    "created" : 1445534957071.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2819269193",
+    "id" : "5884FBAE",
+    "lastKnownWriteTime" : 1445527502,
+    "path" : "~/Dropbox (JHU Data Science)/biostat776/autocomplete/autocomplete.R",
+    "project_path" : "autocomplete.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
