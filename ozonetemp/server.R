@@ -16,9 +16,20 @@ shinyServer(function(input, output) {
                 month <- input$month
                 aqmonth <- subset(airquality, Month == month)
                 aqother <- subset(airquality, Month != month)
-                with(airquality, plot(Temp, Ozone, xlim = range, type = "n", main = input$title))
+                with(airquality, {
+                        plot(Temp, Ozone, xlim = range, 
+                             type = "n", main = input$title)
+                })
                 with(aqother, points(Temp, Ozone))
-                with(aqmonth, points(Temp, Ozone, col = "blue", pch = 19))
-                with(airquality, lines(loess.smooth(Temp, Ozone, span = span)))
+                with(aqmonth, {
+                        points(Temp, Ozone, col = "blue", 
+                               pch = 19)
+                })
+                with(airquality, {
+                        fit <- loess.smooth(Temp, Ozone, 
+                                            span = span,
+                                            evaluation = 200)
+                        lines(fit)
+                })
         })
 })

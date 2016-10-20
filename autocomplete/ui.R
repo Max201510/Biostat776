@@ -7,17 +7,16 @@
 library(shiny)
 
 shinyUI(fluidPage(
-        
-        # Application title
+        ## Application title
         headerPanel("Text Prediction: Autocomplete"),
         
-        # Sidebar with a slider input for number of bins
         sidebarLayout(
+                ## Input box for intering text
                 sidebarPanel(
-                        textInput(inputId = "letters", label = h3("Enter text"))
+                        textInput(inputId = "letters", 
+                                  label = h3("Enter text"))
                 ),
-                
-                # Show a plot of the generated distribution
+                ## Show a plot of the generated distribution
                 mainPanel(
                         h2("Here's your prediction!"),
                         textOutput("completion")
