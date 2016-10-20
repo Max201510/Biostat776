@@ -32,6 +32,6 @@ Textbook key
 10/11 | [Building R packages](../notes/pdf/Rpackages.pdf) | [R packages pre-flight check list](https://github.com/rdpeng/daprocedures/blob/master/lists/Rpackage_preflight.md)| [RStudio R package cheat sheet](http://www.rstudio.com/wp-content/uploads/2015/06/devtools-cheatsheet.pdf)
 10/13 | [Object oriented programming](../notes/pdf/classes-methods.pdf) | [Ch 2.9](https://bookdown.org/rdpeng/RProgDA/object-oriented-programming.html) of MSDR | [S3 polygon class/methods](../notes/pdf/S3polygon.pdf)
 10/18 | [Functional programming](../notes/pdf/functional_programming.pdf) | [Ch 2.3](https://bookdown.org/rdpeng/RProgDA/functional-programming.html) of MSDR|
-10/20 | [Coding Standards](../notes/pdf/codingstandards.pdf); [manipulate](../notes/pdf/manipulate.pdf); Shiny apps | | [manipulate.R](../notes/manipulate.R)
+10/20 | [Coding Standards](../notes/pdf/codingstandards.pdf); [manipulate](../notes/pdf/manipulate.pdf); [Shiny apps](../notes/pdf/shiny.pdf) | | [manipulate.R](../notes/manipulate.R)
 10/25 | Working with larger datasets | | 
 10/28 | **Homework 3 due** | *Please submit your homework through the [Courseplus](https://courseplus.jhu.edu) dropbox* |
