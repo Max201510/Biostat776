@@ -228,17 +228,176 @@ Out of memory strategies
 
 * Database management systems (DBMS) are optimized to more efficiently store and better search through large sets of data
 
-        * Popular examples include Oracle, MySQL, SQLite, and PostgreSQL. 
+* DBMS allows for transactions
 
-* There are corresponding R packages that allow you to connect your R session to a type of database. 
-* The `DBI` package is a generalized interface for connecting R code with a database management system, as it provides a top-level interface to a number of different database management systems, with system-specific code applied by a lower-level, more specific R package.
+# `DBI` Package
+
+* The `DBI` package is a generalized interface for connecting R code with a database management system
+
+* It provides a top-level interface to a number of different database management systems
+
+* There is system-specific code applied by a lower-level, more specific R package.
+
+* There are numerous R packages that allow you to connect your R session to many major database implementations
+
+* Examples: MySQL, PostgresQL, RSQLite, Oracle
+
+* DBI-compliant R packages have not been written for every database management system, so there are some databases for which DBI commands will not work. 
+
+* If a package requires other outside softare, *you must have that installed to use these packages*.
+
 
 # Databases
 
-![Data](images/RDatabaseInterface.png)
+![How R Interfaces with DBMS](images/RDatabaseInterface.png)
+
+# Databases: The `DBI` Package
+
+```{r echo = FALSE}
+dbi_workflow <- data.frame(task = c("Create a new driver object for a database", 
+                                    "Connect to database instance",
+                                    "Find available tables in a database",
+                                    "Find available fields within a table",
+                                    "Query a connected database instance",
+                                    "Pull a data frame into R from a query result",
+                                    "Jointly query and pull data from a database",
+                                    "Close result set from a query",
+                                    "Write a new table in a database instance",
+                                    "Remove a table from a database instance",
+                                    "Disconnect from a database instance"), 
+                           dbi_func = c("`dbDriver`",
+                                        "`dbConnect`",
+                                        "`dbListTables`",
+                                        "`dbListFields`",
+                                        "`dbSendQuery`",
+                                        "`dbFetch`",
+                                        "`dbGetQuery`",
+                                        "`dbClearResult`",
+                                        "`dbWriteTable`",
+                                        "`dbRemoveTable`",
+                                        "`dbDisconnect`"))
+knitr::kable(dbi_workflow, col.names = c("Task", "DBI Function"))
+```
 
 
 
+# Databases: The `DBI` Package
+
+```{r echo = FALSE}
+db_packages <- data.frame("dbms" = c("Oracle", #1
+                                     "MySQL", #2
+                                     "Microsoft SQL Server", #3
+                                     "PostgreSQL", #5
+                                     "SQLite"),
+                          "package" = c("`ROracle`", #1 
+                                        "`RMySQL`", #2
+                                        "`RSQLServer`", #3
+                                        "`RPostgres`", #5
+                                        "`RSQLite`")) #9
+knitr::kable(db_packages, col.names = c("Database Management System", "R packages"))
+```
+
+# `RSQLite` Package
+
+* The `RSQLite` package is convenient because it is simple and straight forward to install (from CRAN)
+
+* Databases are represented as single files on the hard drive
+
+* SQL commands can be sent to the database via the `DBI` functions
+
+* Good for medium to large sized problems that do not need network communication
+
+
+
+# `RSQLite` Package
+
+```{r}
+library(RSQLite)
+drv <- dbDriver("SQLite")
+db <- dbConnect(drv, "airquality")
+dbListTables(db)
+```
+
+# `RSQLite` Package
+
+Extract some data
+
+```{r}
+ozone <- dbReadTable(db, "ozone")
+str(ozone)
+```
+
+# `RSQLite` Package
+
+Send query, Fetch data
+
+```{r}
+result <- dbSendQuery(db,"SELECT Ozone, Wind, Month 
+                      FROM ozone WHERE Month = 5") 
+ozone.sub1 <- dbFetch(result, n = 10)
+str(ozone.sub1)
+dbHasCompleted(result)
+```
+
+# `RSQLite` Package
+
+Continue fetching
+
+```{r}
+ozone.sub2 <- dbFetch(result, n = 10)
+str(ozone.sub2)
+dbHasCompleted(result)
+dbClearResult(result)
+```            
+          
+
+# `RSQLite` Package
+
+Select some rows and fetch results together
+
+```{r}
+ozone.sub <- dbGetQuery(db, "SELECT Ozone, Wind, Month 
+                        FROM ozone WHERE Month = 5")
+str(ozone.sub)
+```
+
+Only do this if you know in advance that the result will fit in memory!
+
+# `RSQLite` Package
+
+Write a new table to the database
+
+```{r}
+values <- c("Ozone level in ppb",
+            "Solar radiation in lang",
+            "Wind speed in mph",
+            "Temperature in degrees F",
+            "Month 1-12",
+            "Day of month 1-31")
+meta <- data.frame(name = names(ozone),
+                   value = values)
+dbWriteTable(db, "metadata", meta)
+dbListTables(db)
+```
+
+# `RSQLite` Package
+
+Show the metadata table
+
+```{r}
+dbReadTable(db, "metadata")
+```
+
+# `RSQLite` Package
+
+Remove a table
+
+```{r}
+dbRemoveTable(db, "metadata")
+dbListTables(db)
+dbDisconnect(db)
+```
+        
 # Summary
 
 * Memory usage is something you need to keep in the back of your mind
@@ -249,5 +408,7 @@ Out of memory strategies
 
 * Make big data small data as quickly as possible
 
-* Use external databases for truly large datasets
+* Use external databases for truly large datasets to push computations closer to the data
+
+* Databases not necessarily faster, but may be only feasible option.
 
