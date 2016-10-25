@@ -1,0 +1,253 @@
+% Working with Larger Datasets
+% Biostatistics 140.776
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(comment = NA, collapse = TRUE)
+```
+
+
+# R and Physical Memory
+
+* R has historically not been good with large datasets
+
+* Need to store working data in physical memory (as opposed to on disk)
+
+* It's important to be aware of the limits of your computing environment with respect to available memory and how that may affect your ability to use R. 
+
+* In the event that your computer's physical memory is insufficient for some of your work, there have been some developments that allow R users to deal with objects out of physical memory and we will discuss them below.
+
+# R and Physical Memory
+
+* The first thing that is worth keeping in mind as you use R is how much physical memory your computer actually has. 
+
+* Typically, you can figure this out by looking at your operating system's settings. 
+
+* Example: This Macbook has 8 GB of RAM. 
+
+* The amount of RAM available to R will be quite a bit less than that, but it's a useful upper bound. 
+* You can't read an object into R that will be 16 GB of RAM.
+
+# `pryr` Package
+
+The `pryr` package provides a number of useful functions for interrogating the memory usage of your R session. 
+
+* The most basic is the `mem_used()` function, which tells you how much memory your current R session is using.
+
+```{r}
+library(pryr)
+mem_used()
+```
+
+The primary use of this function is to make sure your memory usage in R isn't getting too big. If the output from `mem_used()` is in the neighborhood of 75%-80% of your total physical RAM, you might need to consider a few things. 
+
+# How Much Memory is being Used?
+
+You can see the memory usage of objects in your workspace by calling the `object_size()` function.
+
+```{r}
+data(airquality)
+ls()  ## Show objects in workspace
+object_size(airquality)
+```
+
+* The `object_size()` function will print the number of bytes (or kilobytes, or megabytes) that a given object is using in your R session. 
+
+# How Much Memory is being Used?
+
+You can view the change in memory usage by executing an R expression by using the `mem_change()` function. 
+
+```{r}
+mem_change(rm(airquality))
+```
+
+Things won't always add up because of various kinds of memory management overhead.
+
+
+# Back of the Envelope Calculations
+
+* It is important to be cognizant of how much memory is being used up by all of the data objects residing in your workspace. 
+
+* One situation where it's particularly important to understand memory requirements is when you are reading in a new dataset into R. 
+
+* It's easy to make a back of the envelope calculation of how much memory will be required by a new dataset.
+
+# Memory Requirements
+
+It's difficult to generalize how much memory is used by data types in R. On most 64 bit systems today, 
+
+* integers are 32 bits (4 bytes)
+
+* double-precision floating point numbers (numerics in R) are 64 bits (8 bytes). 
+
+* character data are usually 1 byte per character. 
+
+Because most data come in the form of numbers (integer or numeric) and letters, just knowing these three bits of information can be useful for doing many back of the envelope calculations.
+
+# Memory Requirements
+
+For example, an integer vector is roughly 4 bytes times the number of elements in the vector. We can see that for a zero-length vector, that still requires some memory to represent the data structure.
+
+```{r}
+object_size(integer(0))
+```
+
+However, for longer vectors, the overhead stays roughly constant, and the size of the object is determined by the number of elements.
+
+```{r}
+object_size(integer(1000))  ## 4 bytes per integer
+object_size(numeric(1000))  ## 8 bytes per numeric
+```
+
+# Machine Details
+
+```{r}
+str(.Machine)
+```
+
+# Machine Details
+
+Floating Point Numbers
+
+* The floating point representation of a decimal number contains a set of bits representing the **exponent** and another set of bits representing the **significand** or the **mantissa**. 
+
+* The number of bits used for the exponent is 11, from `double.exponent`
+
+* The number of bits for the significand is 53, from the `double.digits` element
+
+* Each double precision floating point number requires 64 bits
+
+Integers
+
+* We can see that the maximum integer indicated by the integer.max is 2147483647
+
+* We can take the base 2 log of that number and see that it requires 31 bits to encode (plus 1 bit for sign)
+
+
+
+# Back of the Envelope Calculations
+
+* If you are reading in tabular data of integers and floating point numbers, you can roughly estimate the memory requirements for that table by multiplying the number of rows by the memory required for each of the columns. 
+
+* Do this **before** reading in a large tabular dataset!
+
+* Example: I have a data frame with 1,500,000 rows and 120 columns, all of which are numeric data. 
+
+* How much memory is required to store this data frame? 
+
+# Back of the Envelope Calculations
+
+
+On most modern computers double precision floating point numbers are stored using 64 bits of memory, or 8 bytes. Given that information, you can do the following calculation
+
+|Rows | Bytes |
+|---:|:---|
+1,500,000 x 120 x 8 bytes/numeric | = 1,440,000,000 bytes
+|| = 1,440,000,000 / 2^20 bytes/MB
+|| = 1,373.29 MB
+|| = 1.34 GB
+
+So the dataset would require about 1.34 GB of RAM. Most computers these days have at least that much RAM. 
+
+
+# Reading in Large Datasets
+
+Even if you have the theoretical amount of memory required, you need to be aware of
+
+* what other programs might be running on your computer, using up RAM
+
+* what other R objects might already be taking up RAM in your workspace
+
+Reading in a large dataset for which you do not have enough RAM is one easy way to freeze up your computer (or at least your R session)! 
+
+
+# Internal Memory Management in R
+
+* R has a garbage collection system that recycles unused memory and gives it back to R. 
+
+* Garbage collection happens automatically without the need for user intervention.
+
+* R will periodically cycle through all of the objects that have been created and see if there are still any references to the object somewhere in the session. 
+
+* If there are no references, the object is garbage-collected and the memory returned. 
+
+* Under normal usage, the garbage collection is not noticeable, but occasionally, when working with very large R objects, you may notice a "hiccup" in your R session when R triggers a garbage collection to reclaim unused memory. 
+
+* (There's not really anything you can do about this except not panic when it happens.)
+
+# Internal Memory Management in R
+
+The `gc()` function can be used to explicitly trigger a garbage collection in R. 
+
+* Calling `gc()` explicitly is never actually needed, but it does produce some output that is worth understanding.
+
+```{r}
+gc()
+```
+
+* The `used` column gives you the amount of memory currently being used by R (the distinction between `Ncells` and `Vcells` is not important)
+
+* The `gc trigger` column gives you the amount of memory that can be used before a garbage collection is triggered. 
+
+* Generally, you will see this number go up as you allocate more objects and use more memory. 
+
+# Dealing with Large Datasets
+
+In-memory strategies
+
+* Basically a collection of functions/packages that handle input/output more efficiently than R's built in functions
+
+* The `readr` package (and `read_csv()`) is one example
+
+* The `data.table` package is another example
+
+* Functions in `dplyr` and `data.table` are often much faster for manipulating large datasets
+
+* Still need to hold entire dataset in memory
+
+* Gentleman's Law: Turn big data into small data as quickly as possible
+
+
+# Dealing with Large Datasets
+
+Out of memory strategies
+
+* File-based or remote repositories
+
+* Relational databases and SQL (RSQlite, RMySQL)
+
+* Memory mapping (`ff` package)
+
+* Other file formats for data (feather, hdf5)
+
+
+# Databases
+
+* There are some options to explore and model the dataset without ever loading it into R, while still using R commands and working from the R console or an R script. 
+
+* These options can make working with large datasets more efficient, because they let other software handle the heavy lifting of sifting through the data and avoid loading large datasets into RAM
+
+* Database management systems (DBMS) are optimized to more efficiently store and better search through large sets of data
+
+        * Popular examples include Oracle, MySQL, SQLite, and PostgreSQL. 
+
+* There are corresponding R packages that allow you to connect your R session to a type of database. 
+* The `DBI` package is a generalized interface for connecting R code with a database management system, as it provides a top-level interface to a number of different database management systems, with system-specific code applied by a lower-level, more specific R package.
+
+# Databases
+
+![Data](images/RDatabaseInterface.png)
+
+
+
+# Summary
+
+* Memory usage is something you need to keep in the back of your mind
+
+* Know how much memory your computer has
+
+* Make rough calculations of data size before reading into R
+
+* Make big data small data as quickly as possible
+
+* Use external databases for truly large datasets
+
