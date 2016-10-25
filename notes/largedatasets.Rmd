@@ -219,6 +219,35 @@ Out of memory strategies
 
 * Other file formats for data (feather, hdf5)
 
+# Memory mapping
+
+* The `ff` package maps large datasets to memory but doesn't load them into R
+
+* Instead a pointer to the data on the disk is stored in R.
+
+* Substantial reduction in memory usage in R, but everything looks like it's in R
+
+* Only available when `mmap()` function is available from the operatin system
+
+# Memory Mapping
+
+Reading in CSV file
+```{r,message=FALSE,warning=FALSE}
+library(ff)
+x <- read.csv.ffdf(file = "2016-07-20.csv", header = TRUE)
+library(pryr)
+object_size(x)
+```
+
+# Memory Mapping
+
+Compare with `readr` package
+
+```{r,message=FALSE}
+library(readr)
+y <- read_csv("2016-07-20.csv")
+object_size(y)
+```
 
 # Databases
 
