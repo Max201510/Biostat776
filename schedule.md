@@ -33,5 +33,5 @@ Textbook key
 10/13 | [Object oriented programming](../notes/pdf/classes-methods.pdf) | [Ch 2.9](https://bookdown.org/rdpeng/RProgDA/object-oriented-programming.html) of MSDR | [S3 polygon class/methods](../notes/pdf/S3polygon.pdf)
 10/18 | [Functional programming](../notes/pdf/functional_programming.pdf) | [Ch 2.3](https://bookdown.org/rdpeng/RProgDA/functional-programming.html) of MSDR|
 10/20 | [Coding Standards](../notes/pdf/codingstandards.pdf); [manipulate](../notes/pdf/manipulate.pdf); [Shiny apps](../notes/pdf/shiny.pdf) | [Autocomplete](../shiny/autocomplete.zip); [Ozone and Temperature](../shiny/ozonetemp.zip) | [manipulate.R](../notes/manipulate.R)
-10/25 | Working with larger datasets | | 
+10/25 |  | | 
 10/28 | **Homework 3 due** | *Please submit your homework through the [Courseplus](https://courseplus.jhu.edu) dropbox* |
