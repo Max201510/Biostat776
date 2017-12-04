@@ -13,6 +13,13 @@ options(width = 50)
 
 * A class is a description of that thing
 
+who kneows
+ok
+but it is not that hard
+* how to use it
+
+* and I dont know
+
 * Everything in R is an **object** of a specific **class**
 
 * Functions can have different behaviors based on the class of an object
